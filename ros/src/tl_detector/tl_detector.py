@@ -49,7 +49,8 @@ class TLDetector(object):
         self.last_wp = -1
         self.state_count = 0
 
-        rospy.spin()
+        rate=rospy.Rate(10) #10hz ~waypoint_updater ~camera picture publish RD        
+        #rospy.spin() RD
 
     def pose_cb(self, msg):
         self.pose = msg
@@ -124,6 +125,14 @@ class TLDetector(object):
         #Get classification
         #return self.light_classifier.get_classification(cv_image)
         #For testing just return the light state
+        ##new
+        light_state, debug_image_or_none = self.light_classifier.get_classification(cv_image)
+        
+        if self.is_debug:
+            if debug_image_or_none is not None:
+                debug_imgmsg=self.bridge.cv2_to_imgmsg(debug_image_or_none, encoding="rgb8")
+                self.debug_image_pub.publish(debug_imgmsg)
+        ##new
         return light.state
 
     def process_traffic_lights(self):
@@ -141,7 +150,7 @@ class TLDetector(object):
         # List of positions that correspond to the line to stop in front of for a given intersection
         stop_line_positions = self.config['stop_line_positions']
         if(self.pose):
-            car_position = self.get_closest_waypoint(self.pose.pose)
+            car_position = self.get_closest_waypoint(self.pose.pose.position.x, self.pose.pose.position.y)#RD
 
         #TODO find the closest visible traffic light (if one exists)
         diff = len(self.waypoints.waypoints)
@@ -159,7 +168,7 @@ class TLDetector(object):
         if closest_light:
             state = self.get_light_state(closest_light)
             return line_wp_idx, state
-        self.waypoints = None
+        #self.waypoints = None   RD
         return -1, TrafficLight.UNKNOWN
 
 if __name__ == '__main__':

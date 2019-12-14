@@ -175,6 +175,7 @@ class Bridge(object):
         self.publishers['dbw_status'].publish(Bool(data))
 
     def publish_camera(self, data):
+        rate = rospy.Rate(1) #1Hz  //RD
         imgString = data["image"]
         image = PIL_Image.open(BytesIO(base64.b64decode(imgString)))
         image_array = np.asarray(image)

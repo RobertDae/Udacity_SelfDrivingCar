@@ -257,17 +257,17 @@ geometry_msgs::Twist PurePursuit::calcTwist(double curvature, double cmd_velocit
 
   geometry_msgs::Twist twist;
   twist.linear.x = cmd_velocity;
-  if (!following_flag)
-  {
+  //if (!following_flag)
+  //{
     //ROS_ERROR_STREAM("Not following");
     twist.angular.z = current_velocity_.twist.linear.x * curvature;
-  }
-  else
-  {
-    twist.angular.z = prev_angular_velocity;
-  }
+  //}
+  //else
+  //{
+  //  twist.angular.z = prev_angular_velocity;
+  //}
 
-  prev_angular_velocity = twist.angular.z;
+  //prev_angular_velocity = twist.angular.z;
   return twist;
 }
 
