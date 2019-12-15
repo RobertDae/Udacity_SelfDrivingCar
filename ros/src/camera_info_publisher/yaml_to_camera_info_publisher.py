@@ -59,8 +59,9 @@ if __name__ == "__main__":
 
     # Initialize publisher node
     rospy.init_node("camera_info_publisher", anonymous=True)
-    publisher = rospy.Publisher("camera_info", CameraInfo, queue_size=10)
-    rate = rospy.Rate(10)
+    publisher = rospy.Publisher("camera_info", CameraInfo, queue_size=1)
+    rate = rospy.Rate(1) # reduced the Rate from 10 to 1 hz and  also adapted the  queue_size accordingly
+
 
     # Run publisher
     while not rospy.is_shutdown():
