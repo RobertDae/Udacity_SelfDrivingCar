@@ -105,9 +105,9 @@ class TLDetector(object):
 
         """
          
-        #TODO implement
-        closest_idx = self.waypoint_tree.query([pose.position.x,pose.position.y],1)[1]
-        return closest_idx
+        #TODO implement (closest_tl_idx)
+        return self.waypoint_tree.query([pose.position.x,pose.position.y],1)[1]
+        #return closest_idx
 
     def get_light_state(self, light):
         """Determines the current color of the traffic light
@@ -172,7 +172,7 @@ class TLDetector(object):
             state = self.get_light_state(closest_light)
             return line_wp_idx, state
         #self.waypoints = None   RD
-        return -1, TrafficLight.UNKNOWN
+        #return -1, TrafficLight.UNKNOWN
 
 if __name__ == '__main__':
     try:
