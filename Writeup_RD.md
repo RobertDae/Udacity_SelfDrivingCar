@@ -149,8 +149,7 @@ TBD
   - Number of published waypoints: 20
   - Camera publishing rate: 1 Hz
   - Classification is only performed when the vehicle current location is between 0 and 75 waypoints from the traffic light stopline. This will lower the workload on the classifier and minimizes lagging between the vehicle simulator and ROS
-  - Final output video (Youtube): [Link](https://youtu.be/41H2Aetl3Uo)
-  - The code: [Link1:github](https://github.com/madhavkarri/CarND-P9-ProgrammingASelfDrivingCar/tree/master/src_vers/src) and [Link2:gdrive](https://drive.google.com/drive/folders/1sVP7IoVzbNEzV9-uj_2On0IpJgQv9iDG)
+ 
   
 Notes: 
 - After launching the ROS and simulator, TensorFlow initialization takes about 4 mins before it can start performing classifcation. Therefore to overcome this issue dbw_enabled flag is not enabled or set to true until 4 mins. Prolonged TensorFlow intilization is an issue for some TensorFlow versions. However, have not spent time to address this issue.
