@@ -135,7 +135,7 @@ TBD
 ### Results and Discussion
 
 - src: Final version
-  - Both the Unity simulator and ROS running on Ubuntu 16.04
+  - The Unity simulator running on Windows and ROS running on Ubuntu 16.04
   - System Specifications: Intel Core i9-9900K Processor, NVIDIA GeForce RTX 2080 Super 8 GB, and 32 GB RAM
   - Activated TensorFlow GPU (version: 1.3.0)
   - Number of published waypoints: 20
@@ -146,4 +146,4 @@ TBD
   
 Notes: 
 - After launching the ROS and simulator, TensorFlow initialization takes about 4 mins before it can start performing classifcation. Therefore to overcome this issue dbw_enabled flag is not enabled or set to true until 4 mins. Prolonged TensorFlow intilization is an issue for some TensorFlow versions. However, have not spent time to address this issue.
-- Link1: github and Link2: Google Drive. Large files are not supported on Github. Even if using git-lfs there is a git-lfs account limit of 1 GB.
+- Large files are not supported on Github. Even if using git-lfs there is a git-lfs account limit of 1 GB.
