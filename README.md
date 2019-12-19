@@ -74,10 +74,4 @@ roslaunch launch/site.launch
 5. Confirm that traffic light detection works on real life images
 
 
---> Easier way:
 
-I.   Download the repo (git clone)
-
-II.  Go to /Udacity_SelfDrivingCar/ and enter `bash setupscripts.sh` (executes the requirements.txt file)
-
-III. Go to /Udacity_SelfDrivingCar/ros and enter `bash run.sh`  (runs the car in simulation environment)
