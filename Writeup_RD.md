@@ -125,7 +125,7 @@ The project was completed in the order as suggested by Udacity:
   - Detection: Detected traffic light and its color from the `/image_color`. The topic `/vehicle/traffic_lights` contains the exact location and status of all traffic lights in simulator and was used to test against the classification output.
   - Waypoint publishing: Once the traffic light was identified and its position determined, it was converted to a waypoint index for publishing.
 
-- Waypoint Updater (Full): Used `/traffic_waypoint` to change the waypoint target velocities before publishing to `/final_waypoints`. The car was able to stop at red traffic lights and move when they were green.
+- Waypoint Updater (Full): Used `/traffic_waypoint` to change the waypoint target velocities before publishing to `/final_waypoints`. The car was right now not able to stop at red traffic lights.
 
 #
 The Code
